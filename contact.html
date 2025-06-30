@@ -33,16 +33,54 @@
             padding: 20px;
         }
 
-      
+        .modern-header {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-      
+            .modern-header::after {
+                content: "";
+                position: absolute;
+                bottom: -50px;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: white;
+                transform: skewY(-3deg);
+                z-index: 1;
+            }
 
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .modern-header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .modern-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        .modern-header i {
+            margin-right: 10px;
+            color: #4cc9f0;
+        }
 
         .profile-container {
             display: flex;
             justify-content: center;
             margin-top: -80px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
             z-index: 10;
         }
@@ -151,6 +189,10 @@
             color: #EA4335;
         }
 
+        .shopify {
+            color: #95BF47;
+        }
+
         footer {
             margin-top: 60px;
             padding: 20px;
@@ -188,7 +230,9 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-  }
+            .modern-header h1 {
+                font-size: 2.2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -197,52 +241,13 @@
             }
 
             .modern-header {
-                background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
-                color: white;
                 padding: 80px 0;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
             }
 
-                .modern-header::after {
-                    content: "";
-                    position: absolute;
-                    bottom: -50px;
-                    left: 0;
-                    right: 0;
-                    height: 100px;
-                    background: white;
-                    transform: skewY(-3deg);
-                    z-index: 1;
+                .modern-header h1 {
+                    font-size: 1.8rem;
                 }
-
-            .header-content {
-                position: relative;
-                z-index: 2;
-            }
-
-            .modern-header h1 {
-                font-size: 2.5rem;
-                margin: 0;
-                font-weight: 700;
-            }
-
-            .modern-header .subtitle {
-                font-size: 1.2rem;
-                opacity: 0.9;
-                margin-top: 15px;
-            }
-
-            .modern-header i {
-                margin-right: 10px;
-                color: #4cc9f0;
-            }
-            body {
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
-            }
-
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -256,44 +261,70 @@
         </div>
     </header>
 
-
     <div class="container">
         <div class="profile-container">
-            <img src="WhatsApp Image 2025-06-14 at 11.28.37 PM.jpeg" alt="صورة ديب" class="profile-img">
+            <img src="C:\Users\Rohyem\Downloads\WhatsApp Image 2025-06-14 at 11.28.37 PM.jpeg" alt="صورة rohayem" class="profile-img">
         </div>
 
         <div class="social-links">
-            <a href="https://wa.me/201091136123" class="social-card" target="_blank">
+            <a href="https://wa.me/رقم_واتساب_الخاص_بك" class="social-card" target="_blank">
                 <div class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
                 <h3>واتساب</h3>
                 <p>راسلني مباشرة</p>
             </a>
 
-            <a href="https://www.facebook.com/rohaym.mahamed.7?mibextid=ZbWKwL" class="social-card" target="_blank">
+            <a href="https://facebook.com/اسم_الصفحة" class="social-card" target="_blank">
                 <div class="social-icon facebook"><i class="fab fa-facebook"></i></div>
                 <h3>فيسبوك</h3>
                 <p>تواصل عبر فيسبوك</p>
             </a>
 
-            <a href="https://www.instagram.com/rohayemohamed?igsh=MWM1ZncwMXNwdWVm" class="social-card" target="_blank">
+            <a href="https://instagram.com/اسم_المستخدم" class="social-card" target="_blank">
                 <div class="social-icon instagram"><i class="fab fa-instagram"></i></div>
                 <h3>إنستجرام</h3>
-                <p>تابعني على إنستجرام </p>
+                <p>تابعني على إنستجرام</p>
             </a>
 
-            <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-card" target="_blank">
+            <a href="https://linkedin.com/in/اسم_المستخدم" class="social-card" target="_blank">
                 <div class="social-icon linkedin"><i class="fab fa-linkedin"></i></div>
                 <h3>لينكد إن</h3>
                 <p>تواصل مهنيًا</p>
             </a>
 
-
-
-
+            <a href="https://no-limit-purchase.myshopify.com/" class="social-card" target="_blank">
+                <div class="social-icon shopify"><i class="fab fa-shopify"></i></div>
+                <h3>متجر Shopify</h3>
+                <p>تسوق من متجري الإلكتروني</p>
+            </a>
         </div>
     </div>
 
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; <span id="year"></span> | rohayem</p>
+    </footer>
 
+    <a href="#" class="floating-btn"><i class="fas fa-arrow-up"></i></a>
 
+    <script>
+        // إضافة السنة الحالية تلقائياً
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // زر العودة للأعلى
+        const floatingBtn = document.querySelector('.floating-btn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                floatingBtn.style.opacity = '1';
+                floatingBtn.style.visibility = 'visible';
+            } else {
+                floatingBtn.style.opacity = '0';
+                floatingBtn.style.visibility = 'hidden';
+            }
+        });
+
+        floatingBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>
