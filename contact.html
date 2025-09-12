@@ -42,17 +42,17 @@
             overflow: hidden;
         }
 
-            .modern-header::after {
-                content: "";
-                position: absolute;
-                bottom: -50px;
-                left: 0;
-                right: 0;
-                height: 100px;
-                background: white;
-                transform: skewY(-3deg);
-                z-index: 1;
-            }
+        .modern-header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: white;
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
 
         .header-content {
             position: relative;
@@ -65,24 +65,10 @@
             font-weight: 700;
         }
 
-        .modern-header .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 15px;
-        }
-
         .modern-header i {
             margin-right: 10px;
             color: #4cc9f0;
         }
- .snapchat {
-     color: #FFFC00 !important;
- }
-
- .social-card:hover .snapchat {
-     color: #FFF200; /* لون أصفر أكثر سطوعاً عند التحويم */
-     transform: scale(1.1); /* تكبير بسيط عند التحويم */
- }
 
         .profile-container {
             display: flex;
@@ -103,10 +89,10 @@
             transition: var(--transition);
         }
 
-            .profile-img:hover {
-                transform: scale(1.05) rotate(5deg);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            }
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
 
         .social-links {
             display: grid;
@@ -130,25 +116,25 @@
             overflow: hidden;
         }
 
-            .social-card::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 5px;
-                background: var(--accent-color);
-                transition: var(--transition);
-            }
+        .social-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
 
-            .social-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            }
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
 
-                .social-card:hover::before {
-                    height: 10px;
-                }
+        .social-card:hover::before {
+            height: 10px;
+        }
 
         .social-icon {
             font-size: 2.5rem;
@@ -171,43 +157,14 @@
             color: #666;
         }
 
-        .whatsapp {
-            color: #25D366;
-        }
-
-        .facebook {
-            color: #1877F2;
-        }
-
+        .whatsapp { color: #25D366; }
+        .facebook { color: #1877F2; }
         .instagram {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .linkedin {
-            color: #0A66C2;
-        }
-
-        .twitter {
-            color: #1DA1F2;
-        }
-
-        .email {
-            color: #EA4335;
-        }
-
-        .shopify {
-            color: #95BF47;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
+        .linkedin { color: #0A66C2; }
 
         .floating-btn {
             position: fixed;
@@ -228,33 +185,9 @@
             text-decoration: none;
         }
 
-            .floating-btn:hover {
-                transform: scale(1.1) translateY(-5px);
-                background: var(--secondary-color);
-            }
-
-        @media (max-width: 768px) {
-            .social-links {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .modern-header h1 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .social-links {
-                grid-template-columns: 1fr;
-            }
-
-            .modern-header {
-                padding: 80px 0;
-            }
-
-                .modern-header h1 {
-                    font-size: 1.8rem;
-                }
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--secondary-color);
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -278,7 +211,7 @@
             <!-- كارت الشركة -->
             <a href="https://rahimexpress.com" class="social-card" target="_blank">
                 <div class="social-icon company">
-                    <img src= ChatGPT Image Aug 22, 2025, 01_11_27 AM.png alt="RahimExpress Logo" style="width:40px; height:40px;">
+                    <img src="company-logo.png" alt="RahimExpress Logo" style="width:40px; height:40px;">
                 </div>
                 <h3>RahimExpress</h3>
                 <p>زور موقع الشركة</p>
@@ -302,24 +235,17 @@
                 <p>تابعني على إنستجرام</p>
             </a>
 
-            <a href="www.linkedin.com/in/rohaym-mohamed-1b8517246" class="social-card" target="_blank">
+            <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246" class="social-card" target="_blank">
                 <div class="social-icon linkedin"><i class="fab fa-linkedin"></i></div>
                 <h3>لينكد إن</h3>
                 <p>تواصل مهنيًا</p>
             </a>
         </div>
     </div>
-</body>
-
-
 
     <a href="#" class="floating-btn"><i class="fas fa-arrow-up"></i></a>
 
     <script>
-        // إضافة السنة الحالية تلقائياً
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // زر العودة للأعلى
         const floatingBtn = document.querySelector('.floating-btn');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
