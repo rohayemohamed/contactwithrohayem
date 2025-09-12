@@ -115,7 +115,38 @@
             position: relative;
             overflow: hidden;
         }
+.social-icon.company {
+    width: 72px;               /* حجم الحاوية */
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(67,97,238,0.08), rgba(72,149,239,0.06));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(67,97,238,0.08);
+    margin-bottom: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+/* الصورة نفسها تتناسب داخل الحاوية */
+.social-icon.company img {
+    width: 48px;               /* حجم الصورة داخل الدائرة */
+    height: 48px;
+    object-fit: contain;       /* يحافظ على نسبة الصورة */
+    display: block;
+}
+
+/* تأثير عند التحويم */
+.social-card:hover .social-icon.company {
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(67,97,238,0.12);
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 480px) {
+    .social-icon.company { width:60px; height:60px; }
+    .social-icon.company img { width:40px; height:40px; }
+}
         .social-card::before {
             content: "";
             position: absolute;
@@ -208,14 +239,15 @@
 
         <div class="social-links">
 
-            <!-- كارت الشركة -->
-            <a href="https://rahimexpress.com" class="social-card" target="_blank">
-                <div class="social-icon company">
-                    <img src="ChatGPT Image Aug 22, 2025, 01_11_27 AM.png" alt="RahimExpress Logo" style="width:40px; height:40px;">
-                </div>
-                <h3>RahimExpress</h3>
-                <p>زور موقع الشركة</p>
-            </a>
+        <!-- كارت الشركة -->
+<a href="https://rahimexpress.com" class="social-card" target="_blank">
+    <div class="social-icon company">
+        <img src="company-logo.png" alt="RahimExpress Logo">
+    </div>
+    <h3>RahimExpress</h3>
+    <p>زور موقع الشركة</p>
+</a>
+
 
             <a href="https://wa.me/201020293610" class="social-card" target="_blank">
                 <div class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
