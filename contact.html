@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact with rohayem</title>
+    <title>Contact & Services — Rohayem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
-
         :root {
             --primary-color: #4361ee;
             --secondary-color: #3f37c9;
@@ -16,6 +17,11 @@
             --white: #ffffff;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+            --card-radius: 15px;
+        }
+
+        * {
+            box-sizing: border-box
         }
 
         body {
@@ -25,10 +31,16 @@
             padding: 0;
             color: var(--text-color);
             min-height: 100vh;
+            direction: rtl;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -36,23 +48,23 @@
         .modern-header {
             background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
             color: white;
-            padding: 100px 0;
+            padding: 90px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .modern-header::after {
-            content: "";
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: white;
-            transform: skewY(-3deg);
-            z-index: 1;
-        }
+            .modern-header::after {
+                content: "";
+                position: absolute;
+                bottom: -50px;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: white;
+                transform: skewY(-3deg);
+                z-index: 1;
+            }
 
         .header-content {
             position: relative;
@@ -60,21 +72,16 @@
         }
 
         .modern-header h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             margin: 0;
             font-weight: 700;
-        }
-
-        .modern-header i {
-            margin-right: 10px;
-            color: #4cc9f0;
         }
 
         .profile-container {
             display: flex;
             justify-content: center;
             margin-top: -80px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 10;
         }
@@ -89,90 +96,63 @@
             transition: var(--transition);
         }
 
-        .profile-img:hover {
-            transform: scale(1.05) rotate(5deg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
+            .profile-img:hover {
+                transform: scale(1.05) rotate(5deg);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            }
 
         .social-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .social-card {
             background: var(--white);
-            border-radius: 15px;
-            padding: 25px 15px;
+            border-radius: var(--card-radius);
+            padding: 20px;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            text-decoration: none;
             color: var(--text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
             overflow: hidden;
-        }
-/* الحاوية */
-.social-icon.company {
-    width: 72px;       /* حجم المربع */
-    height: 72px;
-    border-radius: 15px;   /* لو عايزها مربعة بس بزوايا ناعمة */
-    overflow: hidden;      /* مهم علشان يخلي الصورة ما تخرجش بره */
-    box-shadow: 0 8px 18px rgba(67,97,238,0.08);
-    margin-bottom: 12px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* الصورة تملأ المربع */
-.social-icon.company img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   /* الصورة تملأ المربع بالكامل */
-    display: block;
-}
-
-/* تأثير عند التحويم */
-.social-card:hover .social-icon.company {
-    transform: scale(1.08);
-    box-shadow: 0 12px 28px rgba(67,97,238,0.12);
-}
-
-        .social-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--accent-color);
-            transition: var(--transition);
+            text-align: center;
         }
 
-        .social-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            .social-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            }
+
+        /* company icon box used earlier */
+        .social-icon.company {
+            width: 72px;
+            height: 72px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(67,97,238,0.08);
+            margin-bottom: 12px;
         }
 
-        .social-card:hover::before {
-            height: 10px;
-        }
+            .social-icon.company img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
         .social-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            transition: var(--transition);
-        }
-
-        .social-card:hover .social-icon {
-            transform: scale(1.2);
+            font-size: 2.2rem;
+            margin-bottom: 12px;
         }
 
         .social-card h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.2rem;
+            margin: 6px 0 4px 0;
+            font-size: 1.05rem;
         }
 
         .social-card p {
@@ -181,20 +161,134 @@
             color: #666;
         }
 
-        .whatsapp { color: #25D366; }
-        .facebook { color: #1877F2; }
-        .instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* SERVICES SECTION */
+        .services {
+            margin-top: 40px;
+            display: grid;
+            gap: 24px;
         }
-        .linkedin { color: #0A66C2; }
 
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+            .services-header h2 {
+                margin: 0;
+                font-size: 1.6rem;
+                color: var(--text-color);
+            }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .service-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-left: 12px;
+        }
+
+        .service-card h3 {
+            margin: 6px 0 8px 0;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: flex-start;
+        }
+
+        .service-card p {
+            margin: 0 0 10px 0;
+            color: #555;
+            line-height: 1.45;
+        }
+
+        .service-list {
+            margin: 0 0 12px 0;
+            padding: 0 10px;
+            list-style: none;
+        }
+
+            .service-list li {
+                margin-bottom: 8px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                color: #333;
+            }
+
+        .service-cta {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+
+        .btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            font-weight: 500;
+            transition: transform .18s ease;
+        }
+
+            .btn.secondary {
+                background: transparent;
+                color: var(--text-color);
+                box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+            }
+
+        .service-card:hover .service-icon {
+            transform: translateX(-6px);
+        }
+
+        /* small responsive tweak */
+        @media (max-width:600px) {
+            .modern-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .profile-img {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        /* floating contact button */
         .floating-btn {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary-color);
+            bottom: 24px;
+            left: 24px; /* left so it doesn't overlap RTL content on some phones */
+            background: linear-gradient(180deg,var(--primary-color),var(--secondary-color));
             color: white;
             width: 60px;
             height: 60px;
@@ -202,89 +296,199 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1.4rem;
+            box-shadow: 0 8px 26px rgba(67,97,238,0.18);
             transition: var(--transition);
             z-index: 100;
             text-decoration: none;
         }
 
-        .floating-btn:hover {
-            transform: scale(1.1) translateY(-5px);
-            background: var(--secondary-color);
+            .floating-btn:hover {
+                transform: scale(1.06);
+            }
+
+        /* small badge */
+        .tag {
+            background: rgba(67,97,238,0.08);
+            color: var(--primary-color);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="modern-header">
         <div class="container">
             <div class="header-content">
-                <h1> contact with rohayem <i class="fas fa-comment-dots"></i></h1>
+                <h1>تواصل وخدمات <i class="fas fa-comment-dots"></i></h1>
+                <p style="opacity:.95; margin-top:10px;">أنا روهيم — أقدّم خدمات تطوير مواقع واختبار اختراق أخلاقي</p>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="profile-container">
-            <img src="535386479_4205260613131440_2473509165829117653_n.jpg" alt="صورة rohayem" class="profile-img">
+            <img src="535386479_4205260613131440_2473509165829117653_n.jpg"  class="profile-img">
         </div>
 
-        <div class="social-links">
-
-        <!-- كارت الشركة -->
-<a href="https://rahimexpress.com" class="social-card" target="_blank">
-    <div class="social-icon company">
-        <img src="ChatGPT Image Aug 22, 2025, 01_11_27 AM.png" alt="RahimExpress Logo">
-    </div>
-    <h3>RahimExpress</h3>
-    <p>زور موقع الشركة</p>
-</a>
-
-
-            <a href="https://wa.me/201091136123" class="social-card" target="_blank">
-                <div class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
-                <h3>واتساب</h3>
-                <p>راسلني مباشرة</p>
-            </a>
-
-            <a href="https://www.facebook.com/rohaym.mahamed.7?mibextid=ZbWKwL" class="social-card" target="_blank">
-                <div class="social-icon facebook"><i class="fab fa-facebook"></i></div>
-                <h3>فيسبوك</h3>
-                <p>تواصل عبر فيسبوك</p>
-            </a>
-
-            <a href="https://www.instagram.com/rohayemohamed?igsh=MWM1ZncwMXNwdWVm" class="social-card" target="_blank">
-                <div class="social-icon instagram"><i class="fab fa-instagram"></i></div>
-                <h3>إنستجرام</h3>
-                <p>تابعني على إنستجرام</p>
-            </a>
-
-            <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246" class="social-card" target="_blank">
-                <div class="social-icon linkedin"><i class="fab fa-linkedin"></i></div>
-                <h3>لينكد إن</h3>
-                <p>تواصل مهنيًا</p>
-            </a>
+        <div style="display:flex; gap:18px; align-items:center; justify-content:center; flex-wrap:wrap;">
+            <div class="tag">Freelancer</div>
+            <div style="color:#666">متاح للمشاريع المحلية والدولية</div>
         </div>
+
+        <!-- خدمات -->
+        <section class="services" aria-labelledby="services-title">
+            <div class="services-header">
+                <h2 id="services-title">خدماتي</h2>
+                <div style="color:#666">اختر الخدمة واطلب عرض سعر سريع</div>
+            </div>
+
+            <div class="services-grid">
+                <!-- Ethical Hacking -->
+                <article class="service-card" aria-labelledby="svc1">
+                    <div style="display:flex; align-items:center; justify-content:space-between;">
+                        <div style="display:flex; align-items:center;">
+                            <div class="service-icon" style="background:linear-gradient(135deg,#ff7b7b,#ffb3a7); color:white;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 id="svc1">Ethical Hacking <span style="font-size:0.85rem;color:#888;margin-right:8px;">(اختبار اختراق أخلاقي)</span></h3>
+                        </div>
+                        <div style="font-size:0.85rem;color:#666">مستوى الاحتراف: متوسط — متقدم</div>
+                    </div>
+
+                    <p>أقوم بتقييم أمني لأنظمة الويب والبنية التحتية لاكتشاف الثغرات قبل أن يستغلها الآخرين. تقرير احترافي مع خطوات إصلاح. عملي قانوني وموافق عليه حسب نطاق العمل المتفق.</p>
+
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> اختبارات اختراق تطبيقات الويب (OWASP top 10)</li>
+                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> فحص نقاط الإدخال، XSS، SQLi، CSRF، SSRF</li>
+                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> تقرير مفصّل مع PoC وخيارات تصحيح</li>
+                    </ul>
+
+                    <div class="service-cta">
+                        <a class="btn" href="https://wa.me/201091136123?text=مرحبًا%20روهيم%2C%20أريد%20عرض%20سعر%20لاختبار%20اختراق%20لموقعي" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> اطلب خدمة
+                        </a>
+                        <a class="btn secondary" href="#contact" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">اطلع على تواصل</a>
+                    </div>
+                </article>
+
+                <!-- Web Development -->
+                <article class="service-card" aria-labelledby="svc2">
+                    <div style="display:flex; align-items:center; justify-content:space-between;">
+                        <div style="display:flex; align-items:center;">
+                            <div class="service-icon" style="background:linear-gradient(135deg,#4361ee,#7b61ff); color:white;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 id="svc2">Web Development <span style="font-size:0.85rem;color:#888;margin-right:8px;">(تطوير مواقع)</span></h3>
+                        </div>
+                        <div style="font-size:0.85rem;color:#666">تقنيات: JS • Node • Express • MongoDB</div>
+                    </div>
+
+                    <p>تصميم وتطوير واجهات تفاعلية، أنظمة إدارة محتوى بسيطة، وتكامل بوابات دفع وخدمات الاستضافة. كود منظم وسهل الصيانة مع تبني لممارسات الأمان الأساسية.</p>
+
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> مواقع تعريفية، متاجر إلكترونية، نظم لوحة تحكم</li>
+                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> تحسين أداء وسرعة تحميل صفحات الويب</li>
+                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> ربط APIs، خرائط، ودفع إلكتروني</li>
+                    </ul>
+
+                    <div class="service-cta">
+                        <a class="btn" href="https://wa.me/201091136123?text=أهلًا%20روهيم%2C%20أرغب%20في%20خدمة%20تطوير%20موقع" target="_blank" rel="noopener">
+                            <i class="fas fa-paper-plane"></i> اطلب خدمة
+                        </a>
+                        <a class="btn secondary" href="#portfolio" onclick="alert('ستضاف هنا أمثلة المشاريع قريبا')">شاهد معرضي</a>
+                    </div>
+                </article>
+
+                <!-- إضافي: خدمة استشارية سريعة -->
+                <article class="service-card" aria-labelledby="svc3">
+                    <div style="display:flex; align-items:center; justify-content:space-between;">
+                        <div style="display:flex; align-items:center;">
+                            <div class="service-icon" style="background:linear-gradient(135deg,#00c6ff,#0072ff); color:white;">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 id="svc3">استشارة سريعة</h3>
+                        </div>
+                        <div style="font-size:0.85rem;color:#666">جلسة عبر Zoom / واتساب</div>
+                    </div>
+
+                    <p>جلسة سريعة لتقييم احتياجات مشروعك (30 دقيقة). أنصحك بالخطوات التالية والتكاليف التقديرية.</p>
+
+                    <div class="service-cta">
+                        <a class="btn" href="https://wa.me/201091136123?text=أريد%20حجز%20جلسة%20استشارية%20سريعة" target="_blank" rel="noopener">
+                            احجز جلسة
+                        </a>
+                        <a class="btn secondary" href="#contact" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">معلومات تواصل</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- روابط التواصل -->
+        <div style="margin-top:28px;">
+            <div class="social-links">
+                <a href="https://rahimexpress.com" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-icon company">
+                        <img src="ChatGPT Image Aug 22, 2025, 01_11_27 AM.png" alt="RahimExpress Logo">
+                    </div>
+                    <h3>RahimExpress</h3>
+                    <p>زور موقع الشركة</p>
+                </a>
+
+                <a href="https://wa.me/201091136123" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                    <h3>واتساب</h3>
+                    <p>راسلني مباشرة</p>
+                </a>
+
+                <a href="https://www.facebook.com/rohaym.mahamed.7?mibextid=ZbWKwL" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-icon facebook"><i class="fab fa-facebook"></i></div>
+                    <h3>فيسبوك</h3>
+                    <p>تواصل عبر فيسبوك</p>
+                </a>
+
+                <a href="https://www.instagram.com/rohayemohamed?igsh=MWM1ZncwMXNwdWVm" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-icon instagram"><i class="fab fa-instagram"></i></div>
+                    <h3>إنستجرام</h3>
+                    <p>تابعني على إنستجرام</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246" class="social-card" target="_blank" rel="noopener">
+                    <div class="social-icon linkedin"><i class="fab fa-linkedin"></i></div>
+                    <h3>لينكد إن</h3>
+                    <p>تواصل مهنيًا</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- contact anchor (bottom) -->
+        <div id="contact" style="margin-top:40px; padding:18px; border-radius:12px; background:linear-gradient(180deg, #fff, #fbfbff); box-shadow: var(--shadow); text-align:right;">
+            <h3 style="margin:0 0 8px 0">تواصل معي</h3>
+            <p style="margin:0 0 12px 0; color:#444;">للطلب السريع أو للاستفسار: <strong>+20 109 113 6123</strong></p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a class="btn" href="https://wa.me/201091136123" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> راسلني على واتساب</a>
+                <a class="btn secondary" href="mailto:youremail@example.com"><i class="fas fa-envelope"></i> أرسل إيميل</a>
+            </div>
+        </div>
+
     </div>
 
-    <a href="#" class="floating-btn"><i class="fas fa-arrow-up"></i></a>
+    <!-- floating quick contact button -->
+    <a class="floating-btn" href="https://wa.me/201091136123" target="_blank" rel="noopener" title="تواصل معي على واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
-        const floatingBtn = document.querySelector('.floating-btn');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                floatingBtn.style.opacity = '1';
-                floatingBtn.style.visibility = 'visible';
-            } else {
-                floatingBtn.style.opacity = '0';
-                floatingBtn.style.visibility = 'hidden';
-            }
-        });
-
-        floatingBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({top: 0, behavior: 'smooth'});
+        // احتفظت بسلوك scroll السلس لأزرار داخل الصفحة
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                const id = this.getAttribute('href').slice(1);
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
 </body>
