@@ -1,495 +1,782 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Services — Rohayem</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3f37c9;
-            --accent-color: #4895ef;
-            --text-color: #2b2d42;
-            --light-color: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-            --card-radius: 15px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohaym Mohamed — SWA Software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A1F35;
+    --ink-2:#0E2A46;
+    --paper:#F7F9FC;
+    --steel:#2D5480;
+    --azure:#2E75D6;
+    --azure-light:#5B9BD5;
+    --brass:#C9A05B;
+    --ink-soft:#51637A;
+    --line:#DCE4EE;
+    --card:#FFFFFF;
+    --mono:'JetBrains Mono', monospace;
+    --serif:'Fraunces', serif;
+    --sans:'Inter', sans-serif;
+  }
 
-        * {
-            box-sizing: border-box
-        }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            min-height: 100vh;
-            direction: rtl;
-        }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
 
-        .modern-header {
-            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
-            color: white;
-            padding: 90px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+  :focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+    border-radius:3px;
+  }
 
-            .modern-header::after {
-                content: "";
-                position: absolute;
-                bottom: -50px;
-                left: 0;
-                right: 0;
-                height: 100px;
-                background: white;
-                transform: skewY(-3deg);
-                z-index: 1;
-            }
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
 
-        .modern-header h1 {
-            font-size: 2.6rem;
-            margin: 0;
-            font-weight: 700;
-        }
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(10,31,53,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:72px;
+  }
+  .brand{
+    font-family:var(--mono);
+    color:#fff;
+    font-size:15px;
+    letter-spacing:0.02em;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .brand .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--brass);
+    box-shadow:0 0 0 3px rgba(201,160,91,0.25);
+  }
+  .navlinks{
+    display:flex;
+    gap:30px;
+    font-size:14.5px;
+    color:rgba(255,255,255,0.72);
+  }
+  .navlinks a{ transition:color .2s ease; }
+  .navlinks a:hover{ color:#fff; }
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ink);
+    background:var(--brass);
+    padding:9px 18px;
+    border-radius:3px;
+    font-weight:600;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .nav-cta:hover{ transform:translateY(-1px); box-shadow:0 8px 18px rgba(201,160,91,0.28); }
+  .navtoggle{ display:none; }
 
-        .profile-container {
-            display: flex;
-            justify-content: center;
-            margin-top: -80px;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 10;
-        }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+    color:#fff;
+    overflow:hidden;
+    padding:96px 0 84px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse at 30% 20%, black 45%, transparent 80%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.12;
+    margin:18px 0 20px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--azure-light);
+  }
+  .hero p.lede{
+    font-size:17px;
+    color:rgba(255,255,255,0.72);
+    max-width:480px;
+    margin-bottom:34px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .btn{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:14.5px;
+    padding:13px 24px;
+    border-radius:4px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{
+    background:var(--azure);
+    color:#fff;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 24px rgba(46,117,214,0.35); }
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.25);
+    color:#fff;
+  }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.08); }
 
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--white);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            transition: var(--transition);
-        }
+  .hero-links{
+    display:flex;
+    gap:22px;
+    font-size:13.5px;
+    color:rgba(255,255,255,0.55);
+    font-family:var(--mono);
+  }
+  .hero-links a{ border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px; transition:color .2s ease, border-color .2s ease; }
+  .hero-links a:hover{ color:#fff; border-color:#fff; }
 
-            .profile-img:hover {
-                transform: scale(1.05) rotate(5deg);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            }
+  /* terminal card */
+  .terminal{
+    background:#0D1B2A;
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:10px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+    overflow:hidden;
+  }
+  .terminal-bar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 16px;
+    background:rgba(255,255,255,0.04);
+    border-bottom:1px solid rgba(255,255,255,0.07);
+  }
+  .terminal-bar span{
+    width:10px; height:10px; border-radius:50%;
+    background:#4a5568;
+  }
+  .terminal-bar span:nth-child(1){ background:#e0645a; }
+  .terminal-bar span:nth-child(2){ background:#e0b25a; }
+  .terminal-bar span:nth-child(3){ background:#5ac292; }
+  .terminal-title{
+    margin-left:8px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:rgba(255,255,255,0.45);
+  }
+  .terminal-body{
+    padding:22px 22px 26px;
+    font-family:var(--mono);
+    font-size:13.5px;
+    line-height:1.85;
+    min-height:250px;
+  }
+  .terminal-body .prompt{ color:#5ac292; }
+  .terminal-body .cmd{ color:#e8edf3; }
+  .terminal-body .out{ color:#8fa6c2; }
+  .terminal-body .accent{ color:var(--brass); }
+  .caret{
+    display:inline-block;
+    width:8px; height:15px;
+    background:var(--azure-light);
+    vertical-align:middle;
+    margin-left:2px;
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
 
-        .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:96px 0; }
+  .section-head{ margin-bottom:44px; max-width:640px; }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(26px,3vw,34px);
+    margin-top:14px;
+    letter-spacing:-0.01em;
+  }
+  .section-head p{ color:var(--ink-soft); margin-top:12px; font-size:15.5px; }
+  .eyebrow-dark{ color:var(--azure); }
+  .eyebrow-dark::before{ background:var(--azure); }
 
-        .social-card {
-            background: var(--white);
-            border-radius: var(--card-radius);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about p{ color:var(--ink-soft); font-size:16px; margin-bottom:16px; max-width:560px; }
+  .about strong{ color:var(--ink); font-weight:600; }
 
-            .social-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-            }
+  .spec-sheet{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:26px 28px;
+    background:linear-gradient(180deg, #FBFDFF, #F3F7FB);
+  }
+  .spec-row{
+    display:flex;
+    justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px dashed var(--line);
+    font-size:14px;
+  }
+  .spec-row:last-child{ border-bottom:none; }
+  .spec-row .k{ color:var(--ink-soft); font-family:var(--mono); font-size:12.5px; text-transform:uppercase; letter-spacing:0.04em; }
+  .spec-row .v{ font-weight:600; color:var(--ink); text-align:right; }
 
-        /* company icon box used earlier */
-        .social-icon.company {
-            width: 72px;
-            height: 72px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 18px rgba(67,97,238,0.08);
-            margin-bottom: 12px;
-        }
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:26px 24px;
+    position:relative;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px -18px rgba(11,35,64,0.22);
+    border-color:var(--azure-light);
+  }
+  .service-card .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--azure);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  .service-card h3{
+    font-size:17.5px;
+    margin:10px 0 8px;
+    font-weight:700;
+  }
+  .service-card p{ font-size:14px; color:var(--ink-soft); }
 
-            .social-icon.company img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
+  /* ---------- SKILLS ---------- */
+  .skills{ background:var(--ink); color:#fff; }
+  .skills .eyebrow{ color:var(--brass); }
+  .skills .section-head h2{ color:#fff; }
+  .skills .section-head p{ color:rgba(255,255,255,0.6); }
 
-        .social-icon {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-        }
+  .skill-groups{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .skill-group{
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px;
+    padding:22px 22px 20px;
+    background:rgba(255,255,255,0.03);
+  }
+  .skill-group h4{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--azure-light);
+    margin-bottom:14px;
+  }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.16);
+    color:rgba(255,255,255,0.85);
+    background:rgba(255,255,255,0.04);
+  }
 
-        .social-card h3 {
-            margin: 6px 0 4px 0;
-            font-size: 1.05rem;
-        }
+  /* ---------- EXPERIENCE ---------- */
+  .exp-card{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:34px 36px;
+    background:linear-gradient(180deg, #fff, #FAFCFF);
+    position:relative;
+  }
+  .exp-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:10px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:16px;
+    margin-bottom:18px;
+  }
+  .exp-top h3{ font-size:20px; font-weight:700; }
+  .exp-top .role-sub{ color:var(--ink-soft); font-size:14px; margin-top:4px; }
+  .exp-top .period{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--azure);
+    background:#EAF1FA;
+    padding:6px 12px;
+    border-radius:20px;
+  }
+  .exp-list{ list-style:none; }
+  .exp-list li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:11px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  .exp-list li::before{
+    content:"▹";
+    position:absolute;
+    left:0;
+    color:var(--brass);
+    font-weight:700;
+  }
 
-        .social-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #666;
-        }
+  /* profile strip */
+  .profile-strip{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:32px;
+  }
+  .profile-box{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px 22px;
+  }
+  .profile-box h4{
+    font-family:var(--mono);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--azure);
+    margin-bottom:10px;
+  }
+  .profile-box p{ font-size:14px; color:var(--ink-soft); margin-bottom:4px; }
+  .profile-box .chip-row{ margin-top:2px; }
+  .profile-box .chip{
+    color:var(--ink-soft);
+    border-color:var(--line);
+    background:#F5F8FC;
+  }
 
-        /* SERVICES SECTION */
-        .services {
-            margin-top: 40px;
-            display: grid;
-            gap: 24px;
-        }
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact{
+    background:linear-gradient(180deg, var(--ink-2), var(--ink));
+    color:#fff;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse at 50% 0%, black 40%, transparent 80%);
+  }
+  .contact .wrap{ position:relative; }
+  .contact .eyebrow{ justify-content:center; }
+  .contact .eyebrow::before{ display:none; }
+  .contact h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(30px,4.5vw,46px);
+    margin:16px 0 18px;
+  }
+  .contact p.lede{
+    color:rgba(255,255,255,0.68);
+    max-width:520px;
+    margin:0 auto 34px;
+    font-size:16px;
+  }
+  .contact-actions{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:56px;
+  }
+  .contact-info{
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:13.5px;
+    color:rgba(255,255,255,0.55);
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:26px;
+  }
+  .contact-info a:hover{ color:#fff; }
+  footer.legal{
+    text-align:center;
+    padding:22px 0;
+    font-size:12.5px;
+    color:rgba(255,255,255,0.35);
+    font-family:var(--mono);
+    border-top:1px solid rgba(255,255,255,0.06);
+  }
 
-        .services-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-            .services-header h2 {
-                margin: 0;
-                font-size: 1.6rem;
-                color: var(--text-color);
-            }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: var(--card-radius);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            text-align: right;
-            direction: rtl;
-        }
-
-        .service-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-left: 12px;
-        }
-
-        .service-card h3 {
-            margin: 6px 0 8px 0;
-            font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            justify-content: flex-start;
-        }
-
-        .service-card p {
-            margin: 0 0 10px 0;
-            color: #555;
-            line-height: 1.45;
-        }
-
-        .service-list {
-            margin: 0 0 12px 0;
-            padding: 0 10px;
-            list-style: none;
-        }
-
-            .service-list li {
-                margin-bottom: 8px;
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                color: #333;
-            }
-
-        .service-cta {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-start;
-        }
-
-        .btn {
-            padding: 10px 14px;
-            border-radius: 10px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            gap: 8px;
-            align-items: center;
-            font-weight: 500;
-            transition: transform .18s ease;
-        }
-
-            .btn.secondary {
-                background: transparent;
-                color: var(--text-color);
-                box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
-            }
-
-        .service-card:hover .service-icon {
-            transform: translateX(-6px);
-        }
-
-        /* small responsive tweak */
-        @media (max-width:600px) {
-            .modern-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .profile-img {
-                width: 130px;
-                height: 130px;
-            }
-        }
-
-        /* floating contact button */
-        .floating-btn {
-            position: fixed;
-            bottom: 24px;
-            left: 24px; /* left so it doesn't overlap RTL content on some phones */
-            background: linear-gradient(180deg,var(--primary-color),var(--secondary-color));
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 8px 26px rgba(67,97,238,0.18);
-            transition: var(--transition);
-            z-index: 100;
-            text-decoration: none;
-        }
-
-            .floating-btn:hover {
-                transform: scale(1.06);
-            }
-
-        /* small badge */
-        .tag {
-            background: rgba(67,97,238,0.08);
-            color: var(--primary-color);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-    </style>
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .navlinks{ display:none; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .about-grid{ grid-template-columns:1fr; gap:36px; }
+    .services-grid{ grid-template-columns:repeat(2,1fr); }
+    .skill-groups{ grid-template-columns:repeat(2,1fr); }
+    .profile-strip{ grid-template-columns:1fr; }
+  }
+  @media (max-width:560px){
+    .wrap{ padding:0 20px; }
+    section{ padding:64px 0; }
+    .services-grid{ grid-template-columns:1fr; }
+    .skill-groups{ grid-template-columns:1fr; }
+    .exp-top{ flex-direction:column; align-items:flex-start; }
+    .contact-info{ flex-direction:column; gap:10px; }
+  }
+</style>
 </head>
 <body>
-    <header class="modern-header">
-        <div class="container">
-            <div class="header-content">
-                <h1>تواصل وخدمات <i class="fas fa-comment-dots"></i></h1>
-                <p style="opacity:.95; margin-top:10px;">أنا رحيم— أقدّم خدمات تطوير مواقع واختبار اختراق أخلاقي</p>
-            </div>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="profile-container">
-            <img src="IMG_20251029_030332_350.webp"  class="profile-img">
-        </div>
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="dot"></span>SWA / ROHAYM</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#services">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+    </div>
+    <a class="nav-cta" href="#contact">Start a project</a>
+  </nav>
+</header>
 
-        <div style="display:flex; gap:18px; align-items:center; justify-content:center; flex-wrap:wrap;">
-            <div class="tag">Freelancer</div>
-            <div style="color:#666">متاح للمشاريع المحلية والدولية</div>
-        </div>
-
-        <!-- خدمات -->
-        <section class="services" aria-labelledby="services-title">
-            <div class="services-header">
-                <h2 id="services-title">خدماتي</h2>
-                <div style="color:#666">اختر الخدمة واطلب عرض سعر سريع</div>
-            </div>
-
-            <div class="services-grid">
-                <!-- Ethical Hacking -->
-                <article class="service-card" aria-labelledby="svc1">
-                    <div style="display:flex; align-items:center; justify-content:space-between;">
-                        <div style="display:flex; align-items:center;">
-                            <div class="service-icon" style="background:linear-gradient(135deg,#ff7b7b,#ffb3a7); color:white;">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3 id="svc1">Ethical Hacking <span style="font-size:0.85rem;color:#888;margin-right:8px;">(اختبار اختراق أخلاقي)</span></h3>
-                        </div>
-                        <div style="font-size:0.85rem;color:#666">مستوى الاحتراف: متوسط — متقدم</div>
-                    </div>
-
-                    <p>أقوم بتقييم أمني لأنظمة الويب والبنية التحتية لاكتشاف الثغرات قبل أن يستغلها الآخرين. تقرير احترافي مع خطوات إصلاح. عملي قانوني وموافق عليه حسب نطاق العمل المتفق.</p>
-
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> اختبارات اختراق تطبيقات الويب (OWASP top 10)</li>
-                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> فحص نقاط الإدخال، XSS، SQLi، CSRF، SSRF</li>
-                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> تقرير مفصّل مع PoC وخيارات تصحيح</li>
-                    </ul>
-
-                    <div class="service-cta">
-                        <a class="btn" href="https://wa.me/201091136123?text=مرحبًا%20روهيم%2C%20أريد%20عرض%20سعر%20لاختبار%20اختراق%20لموقعي" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> اطلب خدمة
-                        </a>
-                        <a class="btn secondary" href="#contact" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">اطلع على تواصل</a>
-                    </div>
-                </article>
-
-                <!-- Web Development -->
-                <article class="service-card" aria-labelledby="svc2">
-                    <div style="display:flex; align-items:center; justify-content:space-between;">
-                        <div style="display:flex; align-items:center;">
-                            <div class="service-icon" style="background:linear-gradient(135deg,#4361ee,#7b61ff); color:white;">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3 id="svc2">Web Development <span style="font-size:0.85rem;color:#888;margin-right:8px;">(تطوير مواقع)</span></h3>
-                        </div>
-                        <div style="font-size:0.85rem;color:#666">تقنيات: JS • Node • Express • MongoDB</div>
-                    </div>
-
-                    <p>تصميم وتطوير واجهات تفاعلية، أنظمة إدارة محتوى بسيطة، وتكامل بوابات دفع وخدمات الاستضافة. كود منظم وسهل الصيانة مع تبني لممارسات الأمان الأساسية.</p>
-
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> مواقع تعريفية، متاجر إلكترونية، نظم لوحة تحكم</li>
-                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> تحسين أداء وسرعة تحميل صفحات الويب</li>
-                        <li><i class="fas fa-check-circle" style="color:#4caf50"></i> ربط APIs، خرائط، ودفع إلكتروني</li>
-                    </ul>
-
-                    <div class="service-cta">
-                        <a class="btn" href="https://wa.me/201091136123?text=أهلًا%20روهيم%2C%20أرغب%20في%20خدمة%20تطوير%20موقع" target="_blank" rel="noopener">
-                            <i class="fas fa-paper-plane"></i> اطلب خدمة
-                        </a>
-                        <a class="btn secondary" href="#portfolio" onclick="alert('ستضاف هنا أمثلة المشاريع قريبا')">شاهد معرضي</a>
-                    </div>
-                </article>
-
-                <!-- إضافي: خدمة استشارية سريعة -->
-                <article class="service-card" aria-labelledby="svc3">
-                    <div style="display:flex; align-items:center; justify-content:space-between;">
-                        <div style="display:flex; align-items:center;">
-                            <div class="service-icon" style="background:linear-gradient(135deg,#00c6ff,#0072ff); color:white;">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h3 id="svc3">استشارة سريعة</h3>
-                        </div>
-                        <div style="font-size:0.85rem;color:#666">جلسة عبر Zoom / واتساب</div>
-                    </div>
-
-                    <p>جلسة سريعة لتقييم احتياجات مشروعك (30 دقيقة). أنصحك بالخطوات التالية والتكاليف التقديرية.</p>
-
-                    <div class="service-cta">
-                        <a class="btn" href="https://wa.me/201091136123?text=أريد%20حجز%20جلسة%20استشارية%20سريعة" target="_blank" rel="noopener">
-                            احجز جلسة
-                        </a>
-                        <a class="btn secondary" href="#contact" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})">معلومات تواصل</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- روابط التواصل -->
-        <div style="margin-top:28px;">
-            <div class="social-links">
-                <a href="https://swa.software" class="social-card" target="_blank" rel="noopener">
-                    <div class="social-icon company">
-                        <img src="ChatGPT Image Dec 29, 2025, 09_08_47 PM.png" alt="RahimExpress Logo">
-                    </div>
-                    <h3>swa.software</h3>
-                    <p>زور موقع الشركة</p>
-                </a>
-
-                <a href="https://wa.me/201091136123" class="social-card" target="_blank" rel="noopener">
-                    <div class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
-                    <h3>واتساب</h3>
-                    <p>راسلني مباشرة</p>
-                </a>
-
-                <a href="https://www.facebook.com/rohaym.mahamed.7?mibextid=ZbWKwL" class="social-card" target="_blank" rel="noopener">
-                    <div class="social-icon facebook"><i class="fab fa-facebook"></i></div>
-                    <h3>فيسبوك</h3>
-                    <p>تواصل عبر فيسبوك</p>
-                </a>
-
-                <a href="https://www.instagram.com/rohayemohamed?igsh=MWM1ZncwMXNwdWVm" class="social-card" target="_blank" rel="noopener">
-                    <div class="social-icon instagram"><i class="fab fa-instagram"></i></div>
-                    <h3>إنستجرام</h3>
-                    <p>تابعني على إنستجرام</p>
-                </a>
-
-                <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246" class="social-card" target="_blank" rel="noopener">
-                    <div class="social-icon linkedin"><i class="fab fa-linkedin"></i></div>
-                    <h3>لينكد إن</h3>
-                    <p>تواصل مهنيًا</p>
-                </a>
-            </div>
-        </div>
-
-        <!-- contact anchor (bottom) -->
-        <div id="contact" style="margin-top:40px; padding:18px; border-radius:12px; background:linear-gradient(180deg, #fff, #fbfbff); box-shadow: var(--shadow); text-align:right;">
-            <h3 style="margin:0 0 8px 0">تواصل معي</h3>
-            <p style="margin:0 0 12px 0; color:#444;">للطلب السريع أو للاستفسار: <strong>+20 109 113 6123</strong></p>
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                <a class="btn" href="https://wa.me/201091136123" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> راسلني على واتساب</a>
-                <a class="btn secondary" href="mailto:youremail@example.com"><i class="fas fa-envelope"></i> أرسل إيميل</a>
-            </div>
-        </div>
-
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">SWA SOFTWARE — FOUNDER &amp; FULL-STACK DEVELOPER</div>
+      <h1>I build the software that <em>runs</em> your business.</h1>
+      <p class="lede">CEO &amp; Founder of SWA Software. I design and ship websites, web apps, dashboards, and e-commerce platforms — from first client call to production deployment.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/c/201036499692" target="_blank" rel="noopener">See my project catalog</a>
+        <a class="btn btn-ghost" href="#contact">Start a project</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://rohayemohamed.github.io/contactwithrohayem/contact.html" target="_blank" rel="noopener">Contact page</a>
+        <a href="tel:+201091136123">+20 109 113 6123</a>
+      </div>
     </div>
 
-    <!-- floating quick contact button -->
-    <a class="floating-btn" href="https://wa.me/201091136123" target="_blank" rel="noopener" title="تواصل معي على واتساب">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span></span><span></span><span></span>
+        <span class="terminal-title">rohaym@swa-software — zsh</span>
+      </div>
+      <div class="terminal-body" id="termBody"></div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // احتفظت بسلوك scroll السلس لأزرار داخل الصفحة
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function (e) {
-                e.preventDefault();
-                const id = this.getAttribute('href').slice(1);
-                const el = document.getElementById(id);
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow eyebrow-dark">About</div>
+      <h2 class="section-head" style="margin-bottom:18px;">From client conversation to production code.</h2>
+      <p>I'm <strong>Rohaym Mohamed</strong>, CEO &amp; Founder of <strong>SWA Software</strong> since 2025. I work directly with clients to understand their business, then plan, build, and ship the product myself — websites, web applications, admin systems, and e-commerce platforms.</p>
+      <p>Beyond writing code, I handle client acquisition, business analysis, project planning, and the full software development lifecycle — with a growing focus on <strong>secure coding</strong>, <strong>DevOps deployment workflows</strong>, and using <strong>AI tools like Claude and ChatGPT</strong> to build faster without cutting corners.</p>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><span class="k">Role</span><span class="v">CEO &amp; Founder</span></div>
+      <div class="spec-row"><span class="k">Company</span><span class="v">SWA Software</span></div>
+      <div class="spec-row"><span class="k">Since</span><span class="v">2025</span></div>
+      <div class="spec-row"><span class="k">Focus</span><span class="v">Full-Stack Web Development</span></div>
+      <div class="spec-row"><span class="k">Delivers</span><span class="v">Web, E-commerce, Dashboards</span></div>
+      <div class="spec-row"><span class="k">Languages</span><span class="v">Arabic, English</span></div>
+      <div class="spec-row"><span class="k">Status</span><span class="v">Open to new projects</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-dark">What I build</div>
+      <h2>Products shipped by SWA Software.</h2>
+      <p>A selection of the work categories in my project catalog. Full case list available on request.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="tag">Web</div><h3>Business Websites</h3><p>Professional corporate sites built around branding and conversion.</p></div>
+      <div class="service-card"><div class="tag">Commerce</div><h3>E-commerce Platforms</h3><p>Full-featured online stores with payments and inventory management.</p></div>
+      <div class="service-card"><div class="tag">Platform</div><h3>Online Coaching Platforms</h3><p>Course delivery, scheduling, and student management, end to end.</p></div>
+      <div class="service-card"><div class="tag">Internal Tools</div><h3>Admin Dashboards</h3><p>Data-driven control panels with analytics and role-based access.</p></div>
+      <div class="service-card"><div class="tag">Custom</div><h3>Custom Web Applications</h3><p>Business logic-heavy systems, built and architected from scratch.</p></div>
+      <div class="service-card"><div class="tag">Marketing</div><h3>Landing Pages</h3><p>High-conversion pages built for specific campaigns and launches.</p></div>
+      <div class="service-card"><div class="tag">Systems</div><h3>Booking Systems</h3><p>Real-time reservation and appointment management systems.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Stack &amp; capabilities</div>
+      <h2>The tools behind the work.</h2>
+      <p>A full-stack toolkit, plus the DevOps, security, and AI fluency I bring to every project.</p>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4>Frontend</h4>
+        <div class="chip-row">
+          <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span>
+          <span class="chip">React.js</span><span class="chip">Vue.js</span><span class="chip">Responsive Design</span>
+          <span class="chip">UI/UX Fundamentals</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Backend &amp; Data</h4>
+        <div class="chip-row">
+          <span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">PHP</span>
+          <span class="chip">REST APIs</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>DevOps &amp; Delivery</h4>
+        <div class="chip-row">
+          <span class="chip">Docker (basics)</span><span class="chip">CI/CD pipelines</span>
+          <span class="chip">Linux server admin</span><span class="chip">Git &amp; GitHub</span><span class="chip">WordPress</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Security awareness</h4>
+        <div class="chip-row">
+          <span class="chip">OWASP Top 10</span><span class="chip">Input validation</span>
+          <span class="chip">Auth hardening</span><span class="chip">Secure coding practices</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>AI-assisted development</h4>
+        <div class="chip-row">
+          <span class="chip">Claude</span><span class="chip">ChatGPT</span>
+          <span class="chip">AI-accelerated debugging</span><span class="chip">AI-assisted docs</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Business</h4>
+        <div class="chip-row">
+          <span class="chip">Client acquisition</span><span class="chip">Business development</span>
+          <span class="chip">Project management</span><span class="chip">Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-dark">Experience</div>
+      <h2>Currently building at SWA Software.</h2>
+    </div>
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <h3>CEO &amp; Founder — SWA Software</h3>
+          <div class="role-sub">Full-stack web &amp; software development</div>
+        </div>
+        <div class="period">2025 — Present</div>
+      </div>
+      <ul class="exp-list">
+        <li>Founded and manage SWA Software, a full-stack software development company.</li>
+        <li>Acquire clients through digital marketing and direct communication.</li>
+        <li>Plan and manage software projects from idea through to deployment.</li>
+        <li>Develop responsive websites and custom web applications.</li>
+        <li>Build admin dashboards, authentication systems, APIs, and database-driven solutions.</li>
+        <li>Apply OWASP Top 10-aware secure coding, Docker/CI-CD basics, and AI tools (Claude, ChatGPT) to build faster and harder to break.</li>
+        <li>Manage client relationships end-to-end and ensure successful delivery.</li>
+      </ul>
+    </div>
+
+    <div class="profile-strip">
+      <div class="profile-box">
+        <h4>Education</h4>
+        <p><strong style="color:var(--ink);">Bachelor's Degree, Computer Science</strong></p>
+        <p>In progress</p>
+      </div>
+      <div class="profile-box">
+        <h4>Languages</h4>
+        <p>Arabic — Native</p>
+        <p>English — Professional working proficiency</p>
+      </div>
+      <div class="profile-box">
+        <h4>Soft skills</h4>
+        <div class="chip-row">
+          <span class="chip">Leadership</span><span class="chip">Communication</span><span class="chip">Problem solving</span><span class="chip">Time management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Let's talk</div>
+    <h2>Have a project in mind? Let's build it.</h2>
+    <p class="lede">Tell me what your business needs — a website, a store, a dashboard, or something custom — and I'll help you turn it into a working product.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="https://wa.me/c/201036499692" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn btn-ghost" href="https://rohayemohamed.github.io/contactwithrohayem/contact.html" target="_blank" rel="noopener">Open contact page</a>
+    </div>
+    <div class="contact-info">
+      <a href="tel:+201091136123">+20 109 113 6123</a>
+      <a href="https://www.linkedin.com/in/rohaym-mohamed-1b8517246" target="_blank" rel="noopener">LinkedIn Profile</a>
+      <a href="https://wa.me/c/201036499692" target="_blank" rel="noopener">Project Catalog</a>
+    </div>
+  </div>
+</section>
+
+<footer class="legal">© 2026 Rohaym Mohamed · SWA Software</footer>
+
+<script>
+  const lines = [
+    { p: '$ ', c: 'whoami', o: null },
+    { p: '', c: null, o: '> Rohaym Mohamed — CEO & Founder, SWA Software' },
+    { p: '$ ', c: 'role --current', o: null },
+    { p: '', c: null, o: '> Full-Stack Web Developer & Business Builder' },
+    { p: '$ ', c: 'stack --list', o: null },
+    { p: '', c: null, o: '> React · Vue · Node.js · PHP · MongoDB · MySQL' },
+    { p: '$ ', c: 'security --check', o: null },
+    { p: '', c: null, o: '> OWASP Top 10 aware · secure coding practices' },
+    { p: '$ ', c: 'status', o: null },
+    { p: '', c: null, o: '> Available for new projects', accent: true },
+  ];
+
+  const el = document.getElementById('termBody');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function renderStatic(){
+    el.innerHTML = lines.map(l => {
+      if(l.c) return `<div><span class="prompt">${l.p}</span><span class="cmd">${l.c}</span></div>`;
+      if(l.accent) return `<div class="accent">${l.o}</div>`;
+      return `<div class="out">${l.o}</div>`;
+    }).join('') + '<span class="caret"></span>';
+  }
+
+  if(reduceMotion){
+    renderStatic();
+  } else {
+    let i = 0, j = 0;
+    let current = document.createElement('div');
+    el.appendChild(current);
+
+    function typeNext(){
+      if(i >= lines.length){
+        el.querySelector('.caret')?.remove();
+        el.insertAdjacentHTML('beforeend', '<span class="caret"></span>');
+        return;
+      }
+      const line = lines[i];
+      const text = line.c ? line.c : line.o;
+      const prefixSpan = line.c ? `<span class="prompt">${line.p}</span>` : '';
+      const cls = line.c ? 'cmd' : (line.accent ? 'accent' : 'out');
+
+      if(j === 0){ current.innerHTML = prefixSpan + `<span class="${cls}"></span>`; }
+      const target = current.querySelector('.' + cls);
+
+      if(j <= text.length){
+        target.textContent = text.slice(0, j);
+        j++;
+        setTimeout(typeNext, line.c ? 28 : 14);
+      } else {
+        i++; j = 0;
+        current = document.createElement('div');
+        el.appendChild(current);
+        setTimeout(typeNext, line.c ? 260 : 160);
+      }
+    }
+    typeNext();
+  }
+</script>
+
 </body>
 </html>
